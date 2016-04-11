@@ -5,15 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/pnt_layout"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:layout_margin="@dimen/grid_space"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.afanasenko.lesson3.MainActivity"
     tools:showIn="@layout/activity_main">
-
 
     <GridView
         android:layout_width="match_parent"
@@ -58,7 +53,6 @@
         <ImageButton
             android:id="@+id/button3"
             style="@style/My_Buttons"
-            android:layout_marginRight="@dimen/grid_space"
             android:layout_gravity="center"
             android:src="@drawable/btn_arrow"
             android:clickable="true" />

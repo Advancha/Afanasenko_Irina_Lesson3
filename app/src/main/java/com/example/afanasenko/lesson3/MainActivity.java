@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
@@ -30,13 +31,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //adding textview in grid cells
+        //add textview to the grid cells
+        //ArrayAdapter<String> mAdapter  =  new ArrayAdapter<String>(
+        //        this, android.R.layout.simple_list_item_1, mContacts);
+
         GridView gridview = (GridView) findViewById(R.id.gridview);
         mAdapter = new DataAdapter(getApplicationContext(),
                 android.R.layout.simple_list_item_1);
         gridview.setAdapter(mAdapter);
 
-        //setting number of columns
+        //set number of columns
         if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
             gridview.setNumColumns(3);
         else if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
@@ -58,12 +62,11 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        //Launch emply activity
+        //Launch empty activity
         if (id == R.id.action_settings) {
             Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(intent);
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

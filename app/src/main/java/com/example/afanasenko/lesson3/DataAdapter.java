@@ -26,13 +26,10 @@ public class DataAdapter extends ArrayAdapter<String> {
         this.mContext = context;
     }
 
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
-
         TextView label = (TextView) convertView;
-
         if (convertView == null) {
             convertView = new TextView(mContext);
             label = (TextView) convertView;
@@ -44,11 +41,6 @@ public class DataAdapter extends ArrayAdapter<String> {
         label.setPadding(25,50,25,50);
 
         return (convertView);
-    }
-
-    // возвращает содержимое выделенного элемента списка
-    public String getItem(int position) {
-        return mContacts[position];
     }
 
 }
